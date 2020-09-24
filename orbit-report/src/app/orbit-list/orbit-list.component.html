@@ -2,15 +2,17 @@
 <h3>Orbit Report</h3>
 <table>
    <tr class="header-row">
-      <th class="sortable">Name</th>
-      <th class="sortable">Type</th>
+      <th class="sortable" (click)="sort('name')">Name</th>
+      <th class="sortable" (click)="sort('type')">Type</th>
       <th>Operational</th>
       <th>Orbit Type</th>
       <th>Launch Date</th>
    </tr>
    <tr *ngFor = "let index of satellites">
        <td >{{index.name}}</td> 
-       <td>{{index.type}}</td>
+       <td [class.warning] = "index.shouldShowWarning()" >{{index.type}}</td> 
+       <!-- if index.shouldShowWarning() returns true [class.warning] will activate warning in css file. -->
+       
        <td>{{index.operational}}</td>
        <td>{{index.orbitType}}</td>
        <td>{{index.launchDate}}</td>  
