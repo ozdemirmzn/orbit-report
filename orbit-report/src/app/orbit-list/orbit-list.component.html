@@ -8,9 +8,11 @@
       <th>Orbit Type</th>
       <th>Launch Date</th>
    </tr>
-   <tr>
-       <th *ngFor = "let satelliteList of sourceList">{{satelliteList.name}}, {{satelliteList.type}}
-        , {{satelliteList.operational}}, {{satelliteList.orbitType}}, {{satelliteList.launchDate}}
-       </th>
+   <tr *ngFor = "let index of satellites">
+       <td >{{index.name}}</td> 
+       <td>{{index.type}}</td>
+       <td>{{index.operational}}</td>
+       <td>{{index.orbitType}}</td>
+       <td>{{index.launchDate}}</td>  
    </tr>
 </table>
